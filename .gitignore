@@ -1,0 +1,9 @@
+/node_modules/
+/dist/
+.vite/
+*.annotations.json
+*.editor-backup
+.editor-trash/
+.agents/
+.aws/
+.codex/

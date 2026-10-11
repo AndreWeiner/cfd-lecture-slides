@@ -1,0 +1,52 @@
+:root {
+  --C0: #8dd3c7;
+  --C1: #feffb3;
+  --C2: #bfbbd9;
+  --C3: #fa8174;
+  --C4: #81b1d2;
+  --C5: #fdb462;
+  --C6: #b3de69;
+  --C7: #bc82bd;
+  --C8: #ccebc4;
+}
+
+.reveal .accent { color: var(--C3); }
+.reveal .hint { color: #bdbdbd; font-size: 0.55em; }
+.reveal .writing-space { height: 12rem; border-bottom: 1px solid #555; }
+
+.reveal .slide-number {
+  font-size: 1em;
+  right: auto;
+  width: 1.5em;
+  height: 1.5em;
+  display: grid !important;
+  place-items: center;
+  color: var(--C4);
+  background: transparent;
+}
+
+/* Sparse lecture canvases: centered visuals, remaining area for handwriting. */
+:root { --r-background-color: #111111; }
+.reveal { --r-heading-text-transform: none; }
+.reveal h2 { text-transform: none; }
+body.reveal-viewport { background: #111111; }
+.reveal .slides section.work-slide { height: 650px; padding: 35px 0 0; box-sizing: border-box; text-align: left; }
+.reveal .work-slide h2 { font-size: 1.05em; margin: 0 0 30px; color: var(--r-main-color); text-transform: none; text-align: center; }
+.reveal .lecture-figure { display: block; width: 900px; height: 500px; object-fit: contain; object-position: center; margin: 0 auto; border: 0; background: transparent; box-shadow: none; }
+.reveal .lecture-video { display: block; width: 960px; max-width: 100%; height: auto; max-height: 540px; object-fit: contain; margin: 0 auto; border-radius: 12px; background: #111111; }
+.reveal .cfd-definition { font-size: .8em; line-height: 1.5; max-width: 880px; margin-top: 70px; }
+.reveal .reference { display: block; font-size: .4em; margin-top: 10px; text-align: right; }
+.reveal .title-slide { height: 650px; padding-top: 70px; box-sizing: border-box; text-align: center; }
+.reveal .title-slide .university-logo { display: block; width: 600px; height: 200px; max-width: none; object-fit: contain; margin: 45px auto 0; background: transparent; border: 0; box-shadow: none; }
+.reveal .title-slide h1 { font-size: 1.6em; color: var(--C3); text-transform: none; margin-bottom: 20px; }
+.reveal .title-slide h2 { font-size: .8em; text-transform: none; font-weight: normal; }
+.reveal .title-slide p { font-size: .7em; margin-top: 45px; margin-bottom: 12px; }
+.reveal .title-slide small { font-size: .5em; line-height: 1.5; }
+.reveal .ai-slide ul { display: block; margin: 65px 0 0 1em; font-size: .75em; line-height: 1.55; max-width: 870px; }
+.reveal .ai-slide li { margin-bottom: 28px; padding-left: 10px; }
+.reveal .ai-slide .reference { margin-top: 55px; }
+
+.reveal .slides section.ai-slide { height: auto; padding: 0; text-align: center; }
+.reveal .ai-slide ul { display: inline-block; margin: 35px auto 0; text-align: left; }
+.reveal blockquote.cfd-definition { width: 85%; margin: 60px auto 0; padding: 25px; font-style: normal; text-align: center; }
+.reveal .slide-background-content video { object-fit: contain; }
