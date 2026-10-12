@@ -3,6 +3,7 @@ import RevealHighlight from 'reveal.js/plugin/highlight';
 import RevealMath from 'reveal.js/plugin/math';
 import RevealNotes from 'reveal.js/plugin/notes';
 import RevealInk from '../plugin/ink/v0.3.7/ink.mjs';
+import RevealFlashcards from '../plugin/flashcards/v0.1.2/flashcards.mjs';
 
 import 'reveal.js/reset.css';
 import 'reveal.js/reveal.css';
@@ -21,7 +22,7 @@ const deck = new Reveal({
   hash: true,
   progress: true,
   slideNumber: 'c',
-  plugins: [RevealHighlight, RevealMath.KaTeX, RevealNotes,
+  plugins: [RevealHighlight, RevealMath.KaTeX, RevealNotes, RevealFlashcards,
     ...(window.__editorInitialize ? [] : [RevealInk])],
   ink: {
     presentation: 'cfd-lecture-introduction',

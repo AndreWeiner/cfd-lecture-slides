@@ -1,0 +1,1 @@
+.reveal .cfd-review-slide .reveal-flashcards { position:absolute; left:30px; top:140px; width:900px; max-height:min(480px, calc(var(--flashcards-max-height, 620px) - 140px)); }

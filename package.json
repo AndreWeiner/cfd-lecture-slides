@@ -6,7 +6,8 @@
   "scripts": {
     "start": "vite --open /course_intro.html",
     "build": "node scripts/export-local.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:runtime": "node scripts/build-runtime.mjs"
   },
   "engines": {
     "node": ">=22.12.0"

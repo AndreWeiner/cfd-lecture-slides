@@ -1,6 +1,6 @@
 # CFD lecture slides
 
-Reveal.js slides for the Computational Fluid Dynamics course, with the versioned Reveal Ink handwriting plugin used by the ML-CFD slides.
+Reveal.js slides for the Computational Fluid Dynamics course, with versioned Reveal Ink handwriting and Reveal Flashcards review plugins.
 
 Requires Node.js 22.12 or newer:
 
@@ -21,4 +21,10 @@ To adopt a later plugin release, build it in the separate `reveal-ink` repositor
 
 ## Lecture 1 structure
 
-`course_intro.html` contains 39 slides: a title and eight horizontal sections, with topics arranged vertically. Section zero uses incremental fragments for AI-learning guidance; the remaining slides use headings, visuals, and space for handwriting. Presenter notes carry explanatory prompts. Figures and videos are copied from the course repository into `public/media/`; refresh these copies when the lecture assets change.
+`course_intro.html` contains 24 slides in six horizontal groups, with topics arranged vertically. The deck begins with the title and AI-learning guidance, followed by the CFD introduction, equations, and belt-flow example. The final slide provides 20 flashcards based on Lecture 1. Presenter notes carry explanatory prompts. Figures and videos are copied from the course repository into `public/media/`; refresh these copies when the lecture assets change.
+
+## Reveal Flashcards
+
+The deck pins Reveal Flashcards 0.1.2 in `plugin/flashcards/v0.1.2/`. The final **Review — Lecture 1** slide contains 20 questions and answers. Reveal an answer, then select **Again**, **Hard**, or **Good** to manage the current review session. Progress is local to the current page load; **Start again** reshuffles the cards. The review controls remain above the annotation toolbar, and long answers scroll within the card.
+
+When changing plugin imports or configuration in `src/main.js`, run `npm run build:runtime` to regenerate `public/deck-runtime.js`, then run `npm run build`. The runtime stays an external classic script, so direct HTML opening and the editor's global `window.Reveal` integration are preserved.
