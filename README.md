@@ -28,3 +28,7 @@ To adopt a later plugin release, build it in the separate `reveal-ink` repositor
 The deck pins Reveal Flashcards 0.1.2 in `plugin/flashcards/v0.1.2/`. The final **Review — Lecture 1** slide contains 20 questions and answers. Reveal an answer, then select **Again**, **Hard**, or **Good** to manage the current review session. Progress is local to the current page load; **Start again** reshuffles the cards. The review controls remain above the annotation toolbar, and long answers scroll within the card.
 
 When changing plugin imports or configuration in `src/main.js`, run `npm run build:runtime` to regenerate `public/deck-runtime.js`, then run `npm run build`. The runtime stays an external classic script, so direct HTML opening and the editor's global `window.Reveal` integration are preserved.
+
+## Lecture 2 structure
+
+Open `classification.html` for transport phenomena and PDE classification. The deck contains 41 slides in eight horizontal groups (including the title); move vertically through each topic. Titled blank canvases leave room for live derivations. All 18 sketches and animations from the course's Lecture 2 are included in their dark variants, with local video controls and explanatory presenter notes. Its annotation storage is separate from Lecture 1. Both decks are included by `npm run build`.

@@ -25,7 +25,7 @@ const deck = new Reveal({
   plugins: [RevealHighlight, RevealMath.KaTeX, RevealNotes, RevealFlashcards,
     ...(window.__editorInitialize ? [] : [RevealInk])],
   ink: {
-    presentation: 'cfd-lecture-introduction',
+    presentation: document.body.dataset.presentation || 'cfd-lecture-introduction',
     pen: { color: '#ffffff' },
     storage: { type: 'indexeddb', autosave: true }
   }
