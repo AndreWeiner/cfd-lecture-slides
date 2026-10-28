@@ -17,7 +17,7 @@
 .reveal .lecture3-canvas h2 { position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center; }
 .reveal .lecture3-canvas .lecture-figure,.reveal .lecture3-canvas .lecture-video { position:absolute;left:20px;top:135px;width:920px;height:515px;max-width:none;max-height:none;object-fit:contain;margin:0;border:0;border-radius:0; }
 </style><link rel="stylesheet" href="plugin/ink/v0.3.8/ink.css">
-</head><body data-presentation="cfd-lecture-03"><div class="reveal"><div class="slides">
+<link data-rwe-runtime rel="stylesheet" href="editor-assets/rwe-655f8fe933e4.css"></head><body data-presentation="cfd-lecture-03"><div class="reveal"><div class="slides">
 <section class="title-slide" style="display: block; --rwe-canvas-width: 960px; --rwe-canvas-height: 700px; top: 0px !important; left: 0px !important; width: 960px !important; height: 700px !important; margin: 0px; padding: 0px; box-sizing: border-box;" id="l3-title" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
 <h1 style="position: absolute; left: 0.0000210466px; top: 121.726px; margin: 0px; width: 960px; height: auto; white-space: normal;" data-rwe-text-layout="auto-height">Computational Fluid Dynamics</h1>
 <h2 style="position: absolute; left: 0.0000210466px; top: 229.896px; margin: 0px; width: 960px; height: auto;">Lecture 3 — Finite difference method foundations</h2>
@@ -28,23 +28,23 @@
 <section id="l3-group-foundations">
 <section id="l3-workflow" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>What is the finite difference method?</h2><aside class="notes">Develop domain discretization, nodal unknowns, and derivative approximations. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 <section id="l3-mesh" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Discretizing a one-dimensional domain</h2><img class="lecture-figure" src="public/media/fd-mesh-dark.svg" alt="Discretizing a one-dimensional domain"><aside class="notes">N nodes, N−1 intervals; indexed sets and grid widths. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-solution" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>The discrete solution</h2><aside class="notes">Define phi_i and the collection phi_h. Distinguish exact samples from computed nodal values. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
 </section>
 <section id="l3-group-first-derivatives">
 <section id="l3-derivative-limit" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>From a limit to a finite difference</h2><aside class="notes">Begin with the definition of the derivative. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-forward" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Forward difference</h2><aside class="notes">Define D+ and its valid node range. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-backward" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Backward difference</h2><aside class="notes">Define D− and its valid node range. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
+
 </section>
 <section id="l3-group-taylor">
 <section id="l3-taylor-expansion" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Taylor expansion</h2><aside class="notes">Show four explicit terms plus remainder before the general sum. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 <section id="l3-taylor-animation" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Building an approximation term by term</h2><video class="lecture-video" playsinline preload="metadata" data-autoplay loop muted aria-label="Building an approximation term by term"><source src="public/media/fd-taylor-dark.webm" type="video/webm"><source src="public/media/fd-taylor-dark.mp4" type="video/mp4"></video><aside class="notes">Exponential function expanded about x_i=1. Powers are (x−1); all derivative coefficients at 1 equal e. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-remainder" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>What does the remainder mean?</h2><aside class="notes">Bounded derivatives yield an error bound; distinguish a local Taylor polynomial from convergence of an infinite series. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
 <section id="l3-forward-error" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Forward-difference error</h2><aside class="notes">Rearrange Taylor expansion: leading error +h phi second derivative /2. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 <section id="l3-backward-error" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Backward-difference error</h2><aside class="notes">Leading error −h phi second derivative /2; define first-order accuracy. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 </section>
 <section id="l3-group-central">
 <section id="l3-central-combination" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Combining forward and backward differences</h2><aside class="notes">Use unequal neighboring spacings; derive weights by preserving the first derivative and cancelling the second-derivative error. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-central-error" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Central-difference error</h2><aside class="notes">Leading error is the product of the adjacent widths times the third derivative /6. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
 <section id="l3-central-uniform" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Uniform-grid limit</h2><aside class="notes">The weights become one half and the approximation is second order. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 <section id="l3-first-comparison" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Comparing first-derivative approximations</h2><img class="lecture-figure" src="public/media/fd-first-derivatives-dark.svg" alt="Comparing first-derivative approximations"><aside class="notes">The sketch is on a uniform grid; the central chord need not pass through the middle sample. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 </section>
@@ -52,45 +52,45 @@
 <section id="l3-second-definition" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>The derivative of a derivative</h2><aside class="notes">Motivate successive application of first-derivative operators. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 <section id="l3-central-twice" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Applying the central operator twice</h2><aside class="notes">Offsets −2,0,2; leading error h squared times fourth derivative /3. Discuss boundary treatment and even–odd decoupling. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 <section id="l3-compact-second" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Combining forward and backward differences</h2><aside class="notes">Derive the compact second derivative; leading error h squared times fourth derivative /12. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-quadratic" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Connection to Exercise 1</h2><aside class="notes">Quadratic belt-flow solution: exact second differences at nodes; rounding and solve errors remain. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-nonuniform-second" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Second derivatives on nonuniform grids</h2><aside class="notes">Difference of midpoint slopes; introduce L_h and the asymmetry-dependent third derivative error. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-mesh-refinement" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>How does mesh grading affect accuracy?</h2><aside class="notes">Contrast spacings h,2h with h,h+constant times h squared. Use Taylor-based reasoning. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
+
+
 </section>
 <section id="l3-group-mapping">
 <section id="l3-mapping" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Physical and computational coordinates</h2><img class="lecture-figure" src="public/media/fd-mapping-dark.svg" alt="Physical and computational coordinates"><aside class="notes">Uniform computational mesh mapped smoothly to the physical mesh; the nodal values represent the same state. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-jacobian" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Relating derivatives with the Jacobian</h2><aside class="notes">Motivate J=dx/dxi as local stretching before using the chain rule. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-mapped-second" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Second derivatives under the mapping</h2><aside class="notes">Differentiate the geometry factor as well as the solution. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-metrics" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Geometry and accuracy</h2><aside class="notes">Compare analytical and approximated metrics; smooth nondegenerate mappings are required. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
+
+
 </section>
 <section id="l3-group-time">
 <section id="l3-evolution" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>A general evolution problem</h2><aside class="notes">Write phi dot=f(phi), using lowercase f; the RHS may contain spatial derivatives. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-mean-rate" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>The time step as an average rate</h2><aside class="notes">Integrate from t^n to t^(n+1); define the exact interval mean. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
 <section id="l3-quadrature" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Four approximations of the mean</h2><img class="lecture-figure" src="public/media/fd-time-integration-dark.svg" alt="Four approximations of the mean"><aside class="notes">Compare endpoint, trapezoidal, and midpoint quadrature; distinguish exact midpoint quadrature from an approximate midpoint state. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-euler-forward" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Forward Euler</h2><aside class="notes">Known starting rate: explicit, first order. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-euler-backward" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Backward Euler</h2><aside class="notes">Unknown endpoint rate: implicit, first order. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-crank-nicolson" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Crank–Nicolson</h2><aside class="notes">Average endpoint rates: implicit, second order. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-midpoint" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Implicit midpoint</h2><aside class="notes">Rate at average endpoint state; differs from Crank–Nicolson for nonlinear RHS. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
+
+
+
 <section id="l3-temporal-error" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Accuracy of time integration</h2><aside class="notes">Taylor-expand the rate in elapsed time and integrate term by term; distinguish mean-rate, one-step, and global errors. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 </section>
 <section id="l3-group-multistep">
-<section id="l3-multistep" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Reusing previous time levels</h2><aside class="notes">Two-step means two known levels to compute the third. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
 <section id="l3-multistep-sketch" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Two constructions for multistep methods</h2><img class="lecture-figure" src="public/media/fd-multistep-dark.svg" alt="Two constructions for multistep methods"><aside class="notes">AB2 extrapolates rates; BDF2 differentiates a quadratic through states. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-ab2" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Explicit Adams–Bashforth (AB2)</h2><aside class="notes">Integrate a linear extrapolation of known rates; derive weights 3/2 and −1/2. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-bdf2" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Backward differentiation formula (BDF2)</h2><aside class="notes">Differentiate a quadratic at the new time; implicit linear or nonlinear solve. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-higher-order" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Starting values and higher-order schemes</h2><aside class="notes">Discuss startup, history, and higher-order AB/BDF members. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
+
+
 </section>
 <section id="l3-group-convection-diffusion">
 <section id="l3-model" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Periodic convection–diffusion</h2><img class="lecture-figure" src="public/media/fd-convection-diffusion-dark.svg" alt="Periodic convection–diffusion"><aside class="notes">Positive constant v, constant Gamma, sine initial condition, periodic values and gradients. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-exact" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>A traveling and decaying wave</h2><aside class="notes">Derive the exact sine solution with exponential amplitude decay. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-periodic-grid" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>The uniform periodic mesh</h2><aside class="notes">N distinct nodes, delta x=1/N. Do not store the repeated endpoint as an independent unknown. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
+
 <section id="l3-space" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Central diffusion and convection</h2><aside class="notes">Construct both spatial approximations. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-upwind" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Upwind convection</h2><aside class="notes">Relate upstream choice to information transport; explain the second-derivative error as numerical diffusion. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
 <section id="l3-semidiscrete" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Semi-discrete equations</h2><aside class="notes">Keep time continuous; introduce A=Gamma/delta x squared and B=v/(2 delta x). Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 <section id="l3-matrix" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Vector–matrix form</h2><aside class="notes">Use the underlined solution vector and periodic L matrix. Explain modulo indexing. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 <section id="l3-time-updates" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>From space to fully discrete schemes</h2><aside class="notes">Apply forward Euler, backward Euler, and Crank–Nicolson to the semi-discrete system. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 <section id="l3-theta" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>A single weighted formula</h2><aside class="notes">Alpha=0,1/2,1; collect new-time-level terms on the left. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 <section id="l3-dimensionless" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Courant and diffusion numbers</h2><aside class="notes">M=delta t L; C=abs(v) delta t/delta x and D=Gamma delta t/delta x squared; include velocity sign. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
-<section id="l3-linear-solves" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Solving the time step</h2><aside class="notes">Implicit updates require a linear solve. Direct and iterative methods follow later in the course. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
+
 <section id="l3-comparison-animation" class="work-slide lecture3-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700"><h2>Comparing the numerical solutions</h2><video class="lecture-video" playsinline preload="metadata" data-autoplay loop muted aria-label="Comparing the numerical solutions"><source src="public/media/fd-euler-comparison-dark.webm" type="video/webm"><source src="public/media/fd-euler-comparison-dark.mp4" type="video/mp4"></video><aside class="notes">Forward Euler, N=40, v=1, Gamma=.01, dt=.001, t from 0 to 3. Extra damping with upwind; stability analysis follows in Lecture 4. Source: CFD lecture, notebooks/lecture_03.py.</aside></section>
 </section>
-</div></div></body></html>
+</div></div><script data-rwe-runtime src="editor-assets/rwe-655f8fe933e4.js"></script></body></html>
