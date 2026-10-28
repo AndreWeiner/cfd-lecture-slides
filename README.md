@@ -31,6 +31,10 @@ When changing plugin imports or configuration in `src/main.js`, run `npm run bui
 
 ## Lecture 2 structure
 
-Open `classification.html` for transport phenomena and PDE classification. The deck contains 41 slides in eight horizontal groups (including the title); move vertically through each topic. Titled blank canvases leave room for live derivations. All 18 sketches and animations from the course's Lecture 2 are included in their dark variants, with local video controls and explanatory presenter notes. Its annotation storage is separate from Lecture 1. Both decks are included by `npm run build`.
+Open `classification.html` for transport phenomena and PDE classification. The deck contains 41 slides in eight horizontal groups (including the title); move vertically through each topic. Titled blank canvases leave room for live derivations. All 18 sketches and animations from the course's Lecture 2 are included in their dark variants, with automatically playing inline videos and explanatory presenter notes. Its annotation storage is separate from Lecture 1. Both decks are included by `npm run build`.
 
 Lecture 2 ends with **Review — Lecture 2**, containing 20 flashcards based on `cfd-lecture/notebooks/lecture_02.py`. The review uses the same answer-reveal and Again/Hard/Good controls as Lecture 1.
+
+## Lecture 3 structure
+
+Open `finite_difference_foundations.html` for **Finite difference method foundations**. It contains 51 slides in 10 horizontal groups, with vertical navigation within each topic. Titled blank canvases support live derivations; all six manuscript sketches and both animations are included in their dark variants. Videos have local WebM and MP4 sources, autoplay inline, and loop without native playback controls. The deck reuses the local runtime and has separate Lecture 3 annotation storage. `npm run build` includes it in the static export. Asset provenance is recorded in `public/media/fd-slide-assets.json`.
