@@ -13,6 +13,8 @@ import '../plugin/ink/v0.3.8/ink.css';
 import './lecture.css';
 
 const deck = new Reveal({
+  viewDistance: 3,
+  mobileViewDistance: 2,
   katex: {
     local: new URL('libs/katex', document.currentScript?.src || document.baseURI).href
   },

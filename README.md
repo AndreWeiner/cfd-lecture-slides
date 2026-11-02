@@ -40,3 +40,9 @@ Lecture 2 ends with **Review — Lecture 2**, containing 20 flashcards based on 
 Open `finite_difference_foundations.html` for **Finite difference method foundations**. It contains 51 slides in 10 horizontal groups, with vertical navigation within each topic. Titled blank canvases support live derivations; all six manuscript sketches and both animations are included in their dark variants. Videos have local WebM and MP4 sources, autoplay inline, and loop without native playback controls. The deck reuses the local runtime and has separate Lecture 3 annotation storage. `npm run build` includes it in the static export. Asset provenance is recorded in `public/media/fd-slide-assets.json`.
 
 Lecture 3 ends with **Review — Lecture 3**, containing 20 flashcards based on `cfd-lecture/notebooks/lecture_03.py`. It uses the same answer-reveal, Again/Hard/Good, and Start again workflow as Lectures 1 and 2.
+
+### Mobile video recovery
+
+Safari can report zero decoded frames while playback is advancing. The player now checks time progress, coalesces pending checks, and permits only one recovery reload per video element. A rejected recovery play request restores native controls. Autoplay and looping settings are preserved. Run `node tests/mobile-media-recovery.mjs` to check recovery behavior. Rebuild the player after changing the helper (`npm run build:runtime && npm run build` for CFD; `npm run build` for ML). The ML Lecture 2 vendored player in `public/libs/reveal/6.0.2/reveal.js` must also be refreshed from `dist/reveal.js`.
+
+Course videos use `preload="auto"` with lazy `data-src` sources. Reveal loads nearby slides (desktop view distance 3, mobile 2); distant sources remain unset. The `data-lazy-loaded` video marker also lets Reveal release child sources when a slide leaves that range. Browsers control actual buffering and may retain cached data.
