@@ -38,3 +38,5 @@ Lecture 2 ends with **Review — Lecture 2**, containing 20 flashcards based on 
 ## Lecture 3 structure
 
 Open `finite_difference_foundations.html` for **Finite difference method foundations**. It contains 51 slides in 10 horizontal groups, with vertical navigation within each topic. Titled blank canvases support live derivations; all six manuscript sketches and both animations are included in their dark variants. Videos have local WebM and MP4 sources, autoplay inline, and loop without native playback controls. The deck reuses the local runtime and has separate Lecture 3 annotation storage. `npm run build` includes it in the static export. Asset provenance is recorded in `public/media/fd-slide-assets.json`.
+
+Lecture 3 ends with **Review — Lecture 3**, containing 20 flashcards based on `cfd-lecture/notebooks/lecture_03.py`. It uses the same answer-reveal, Again/Hard/Good, and Start again workflow as Lectures 1 and 2.
