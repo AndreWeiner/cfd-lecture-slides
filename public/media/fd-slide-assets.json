@@ -1,16 +1,16 @@
 {
   "source": "cfd-lecture/notebooks/lecture_03.py",
-  "source_sha256": "8fd3ab5741976d3c484bc8beee78830756cabdda963b710b8bc9090ed3cf3030",
+  "source_sha256": "83c9de56772d07626f977f33e4f67f1c7cdd6f3240a3b2e556017e576c5d8315",
   "assets": {
-    "fd-mesh-dark.svg": "a2216946ac9a81296d0d1febff328889437f199c435e1d9c21e1b6ee3e1621f0",
-    "fd-taylor-dark.webm": "a0df9e3441f3b986555665d9f20de6dc0fc5b597b07c8f28db9ad18b33541a0c",
-    "fd-taylor-dark.mp4": "25c2229b9880ce86ebe6ab478b60e27ba8dd1a16865a0b0806941286fdde8f72",
-    "fd-first-derivatives-dark.svg": "9e490dad0214ab2f872180ddaa3a097b4ef399f174e74f9b576f2ca4934b0009",
-    "fd-mapping-dark.svg": "eb8db9d523ce782a94d2f122934efbd25ffa36dcb4a27f7e4f32be6250b7da33",
-    "fd-time-integration-dark.svg": "4facbbcafe38d90d348beeede426bb34b812fd22e72f3be1830853efbd128519",
-    "fd-multistep-dark.svg": "43b494252a77b2cec5a3bd6c9e225fa323a30c8a6f0dd02b820570e937ad8a3b",
-    "fd-convection-diffusion-dark.svg": "9a177b76c2f2976bb2b32cddb3ac69683982b290960b6e2b2d4548cc8b4f090c",
-    "fd-euler-comparison-dark.webm": "14afc611afd8530c183c5f06b6fa58b32e71b6841fd452b5a787e6419a44b0a6",
-    "fd-euler-comparison-dark.mp4": "7be8798c67c15bb6c70d46c760a76227b39a8f695dafc51d2eb9c9e669d48d97"
+    "fd-mesh-dark.svg": "ccea866b23aa0d016c7b4db13826d3814ecb39a8e52b638942b2371cdc731f6d",
+    "fd-taylor-dark.webm": "1350a21bed27ad24a800003cb047762c859a87b4af6a97415ee03d1b7a6ecb69",
+    "fd-taylor-dark.mp4": "f55b38aa0bdca3f97a89c3dbaee2515219ea112c94522ebbfb92118918864a92",
+    "fd-first-derivatives-dark.svg": "d69cb5d6409b6455dfc6f873e989723d150b7b95cd910817ab71a75d995dcce0",
+    "fd-mapping-dark.svg": "39f51e01c62415fde966b3aef473c175d668973a7886a3713cce7d73f60dcad9",
+    "fd-time-integration-dark.svg": "3b8fff76a5805f1ffc34ce04fa781764ab9e6fc7bf03313ea83fde987e9f5047",
+    "fd-multistep-dark.svg": "9dd874ebf0c6673e4b49946eff4716ca817cacf9fafde0e9dc2d6120002d2626",
+    "fd-convection-diffusion-dark.svg": "3ec39d6e71ea9e59ef3ebc1c612dd1290cbcf71e5992ea3484214ca5f35c8d20",
+    "fd-euler-comparison-dark.webm": "75d84833fcca70c6bdff7f94b407cc2a6ea0eccd2a48f8ec63f2ad40ae829653",
+    "fd-euler-comparison-dark.mp4": "c1ac3f50d99498897b54874b593c6d9364ecc11e6f03b263ae732365e83556ce"
   }
 }
