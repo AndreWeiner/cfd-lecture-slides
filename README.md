@@ -41,6 +41,10 @@ Open `finite_difference_foundations.html` for **Finite difference method foundat
 
 Lecture 3 ends with **Review — Lecture 3**, containing 20 flashcards based on `cfd-lecture/notebooks/lecture_03.py`. It uses the same answer-reveal, Again/Hard/Good, and Start again workflow as Lectures 1 and 2.
 
+## Lecture 4 structure
+
+Open `consistency_stability_convergence.html` for **Consistency, stability, and convergence**. The deck follows the Lecture 4 manuscript from the consistency residual through Fourier stability and convergence. It uses vertical topic groups, presenter notes, all eight manuscript figures, and the upwind animation in the dark theme. The final **Review — Lecture 4** slide contains 20 flashcards. The deck has its own annotation storage and is included in the static export. Asset provenance is recorded in `public/media/csc-slide-assets.json`.
+
 ### Mobile video recovery
 
 Safari can report zero decoded frames while playback is advancing. The player now checks time progress, coalesces pending checks, and permits only one recovery reload per video element. A rejected recovery play request restores native controls. Autoplay and looping settings are preserved. Run `node tests/mobile-media-recovery.mjs` to check recovery behavior. Rebuild the player after changing the helper (`npm run build:runtime && npm run build` for CFD; `npm run build` for ML). The ML Lecture 2 vendored player in `public/libs/reveal/6.0.2/reveal.js` must also be refreshed from `dist/reveal.js`.

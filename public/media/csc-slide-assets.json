@@ -1,0 +1,15 @@
+{
+  "source": "cfd-lecture/notebooks/lecture_04.py",
+  "source_sha256": "43f323244aa43155a5e46654a1fdfe4d8c282abeaec418622c1cd809321af6e8",
+  "assets": {
+    "csc-error-dark.svg": "9d6ec7e5804744c43663dc6cde9fb94da1d3888f742f8287bb4c3b762a68a729",
+    "csc-characteristics-dark.svg": "c818ad19ae243e586c75ca8b1f81f0b405c9483b618bdefb7178b45d385d3e32",
+    "csc-upwind-dark.mp4": "332c3f5fa85aa9d0a7e7c55d4127f979931d8c4a03a258149d8fa4c26c3603a3",
+    "csc-complex-plane-dark.svg": "a0adcdc89e0e5cce4f6cb1d62c76c494552964025ebaa478511a865b410034f1",
+    "csc-periodic-modes-dark.svg": "72dc6ab94395685a828d84c0b880514badbbead4a242e6327f37488cbdf07617",
+    "csc-modified-wavenumbers-dark.svg": "0d3f51ea5685146e15fb6aad3d37fc91d1d757b22f75609346882ecc25eace53",
+    "csc-stability-regions-dark.svg": "85b6a621aa440d6ccbf2c1b28a6350d290543c020c15ab167ea356ee3cab9492",
+    "csc-spectral-errors-dark.svg": "9c3bae53aecdff3a3b163edc45cff4be3f137d90a1b8caac3f413d63a737ef30",
+    "csc-lax-wendroff-dark.svg": "a5017a76873f4ecace27677db17f708b62b775d9193111996e565df7f47e57fc"
+  }
+}
