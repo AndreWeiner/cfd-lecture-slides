@@ -18,9 +18,9 @@
 .reveal .slides section.lecture4-canvas { width: 960px; height: 700px; padding: 0; box-sizing: border-box; }
 .reveal .lecture4-canvas .lecture-figure, .reveal .lecture4-canvas .lecture-video { position: absolute; left: 20px; top: 135px; width: 920px; height: 515px; max-width: none; max-height: none; object-fit: contain; margin: 0; border: 0; border-radius: 0; }
 </style>
-<link data-rwe-runtime rel="stylesheet" href="editor-assets/rwe-655f8fe933e4.css">
+
 <script defer src="public/plausible.js"></script>
-</head>
+<link data-rwe-runtime rel="stylesheet" href="editor-assets/rwe-655f8fe933e4.css"></head>
 <body data-presentation="cfd-lecture-04"><div class="reveal"><div class="slides">
 <section class="title-slide" style="display: block; --rwe-canvas-width: 960px; --rwe-canvas-height: 700px; top: 0px !important; left: 0px !important; width: 960px !important; height: 700px !important; margin: 0px; padding: 0px; box-sizing: border-box;" id="l4-title" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
 <h1 style="position: absolute; left: 0.0000210466px; top: 121.726px; margin: 0px; width: 960px; height: auto; white-space: normal;" data-rwe-text-layout="auto-height">Computational Fluid Dynamics</h1>
@@ -98,20 +98,12 @@
 <h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">A shift multiplies a Fourier mode</h2>
 
 <aside class="notes">Start with the real part of one complex exponential. The continuous problem evolves each mode independently with convection changing phase and diffusion reducing amplitude. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
-<section id="l4-modified-wavenumber" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
-<h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">Modified wavenumbers</h2>
-
-<aside class="notes">Derive the three symbols by applying the stencils to a shifted Fourier mode. Relate the imaginary part of the upwind modified wavenumber to damping and the real part to phase speed. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
-<section id="l4-wavenumber-plot" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
-<h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">How the grid changes short waves</h2>
-<img class="lecture-figure" src="public/media/csc-modified-wavenumbers-dark.svg" alt="How the grid changes short waves">
-<aside class="notes">The real parts for central and upwind convection coincide. Central convection cannot see the Nyquist mode. Upwind damps that mode, and compact central diffusion also damps it. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
 </section>
 <section id="l4-group-stability">
 <section id="l4-one-gain" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
 <h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">One Fourier mode through one step</h2>
 
-<aside class="notes">Use pure upwind at C=1/2 and four nodes per wavelength. The phase advance matches the exact wave while the amplitude decreases. Link the semi-discrete symbol to the time step. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
+<aside class="notes">Use pure upwind at C=1/2 and four nodes per wavelength. The phase advance matches the exact wave while the amplitude decreases. Obtain the spatial multiplier by substituting neighboring Fourier samples directly, then form the forward Euler gain. Modified wavenumbers are introduced later as an accuracy diagnostic. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
 <section id="l4-fourier-test" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
 <h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">When does the Fourier test apply?</h2>
 
@@ -120,24 +112,14 @@
 <h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">Forward Euler with central convection</h2>
 
 <aside class="notes">Factor |G|²−1 using s=sin²(θ/2). The bracket is linear in s, so check s approaching zero and s=1. These give C²≤2D and 2D≤1 over the full angle range. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
-<section id="l4-upwind-gain" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
-<h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">Forward Euler with upwind convection</h2>
 
-<aside class="notes">Use θ=π for necessity on even grids. For sufficiency, use nonnegative weights summing to one, or a weighted average of unit-magnitude phase factors. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
 <section id="l4-stability-regions" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
 <h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">Courant and diffusion bounds</h2>
 <img class="lecture-figure" src="public/media/csc-stability-regions-dark.svg" alt="Courant and diffusion bounds">
 <aside class="notes">Locate C=0.04, D=0.016 from Lecture 3 in both regions. At fixed mesh, varying Δt moves along a ray from the origin. Positive physical diffusion imposes a quadratic time-step scaling on fine meshes. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
-<section id="l4-lw-gain" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
-<h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">Lax–Wendroff stability</h2>
 
-<aside class="notes">Insert the shifts into the update from the consistency section. At C=1 the gain is exp(−iθ), the exact shift. For C&gt;1 all nonconstant modes grow. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
 </section>
 <section id="l4-group-accuracy">
-<section id="l4-modified-equation" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
-<h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">Numerical diffusion in the modified equation</h2>
-
-<aside class="notes">Move the leading residual correction to the right-hand side. The coefficients shown are the second-derivative coefficients. Higher derivatives enter when Γ&gt;0. This smooth-wave expansion is distinct from the exact grid-scale gain. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
 <section id="l4-gain-errors" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
 <h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">Amplitude and phase errors</h2>
 
@@ -150,24 +132,24 @@
 <h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">A sine wave and a rectangular pulse</h2>
 <img class="lecture-figure" src="public/media/csc-lax-wendroff-dark.svg" alt="A sine wave and a rectangular pulse">
 <aside class="notes">Both profiles travel half the periodic interval. The sine probes one mode. The pulse exposes dispersion through overshoots and undershoots. Compare the three Courant numbers, including the exact nodal shift at C=1. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
+<section id="l4-modified-wavenumber" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
+<h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">Modified wavenumbers</h2>
+
+<aside class="notes">Derive the three symbols by applying the stencils to a shifted Fourier mode. Relate the imaginary part of the upwind modified wavenumber to damping and the real part to phase speed. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
+<section id="l4-wavenumber-plot" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
+<h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">How the grid changes short waves</h2>
+<img class="lecture-figure" src="public/media/csc-modified-wavenumbers-dark.svg" alt="How the grid changes short waves">
+<aside class="notes">The real parts for central and upwind convection coincide. Central convection cannot see the Nyquist mode. Upwind damps that mode, and compact central diffusion also damps it. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
+
 </section>
 <section id="l4-group-convergence">
 <section id="l4-convergence" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
 <h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">Convergence under refinement</h2>
 
 <aside class="notes">Compare numerical values to exact samples over a fixed physical interval. Contrast consistency of the equation residual with convergence of the solution error. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
-<section id="l4-error-recurrence" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
-<h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">How local defects accumulate</h2>
 
-<aside class="notes">Subtract the exact-sample update from the numerical update. For forward Euler the one-step defect is Δt τ. Iterate the recurrence and bound powers of B_h using stability. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
-<section id="l4-orders" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
-<h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">What determines the observed order?</h2>
 
-<aside class="notes">For convection–diffusion, quadratic time-step refinement gives second-order global error for Euler central within the stable region and with exact initial samples. In the lecture’s fixed-C pure convection check, upwind approaches order one and Lax–Wendroff order two. Connect this to Exercise 3. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
-<section id="l4-equivalence" class="work-slide lecture4-canvas" data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700">
-<h2 style="position:absolute;left:20px;top:20px;width:920px;margin:0;font-size:52px;line-height:1.18;text-align:center;">The Lax–Richtmyer equivalence theorem</h2>
 
-<aside class="notes">The theorem concerns a well-posed linear initial-value problem, a consistent linear finite difference scheme, a fixed finite interval and a common refinement family. Source: cfd-lecture/notebooks/lecture_04.py.</aside></section>
 
 </section>
 <section id="lecture-4-review" class="work-slide cfd-review-slide" data-flashcards data-rwe-canvas="true" data-rwe-canvas-width="960" data-rwe-canvas-height="700" style="height:700px;padding:0;">
